@@ -1,0 +1,5 @@
+/Users/jason_northam/Projects/DeletionTool/DeletionTool/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/jason_northam/Projects/DeletionTool/DeletionTool/bin/Debug/DeletionTool.exe.mdb
+/Users/jason_northam/Projects/DeletionTool/DeletionTool/bin/Debug/DeletionTool.exe
+/Users/jason_northam/Projects/DeletionTool/DeletionTool/obj/x86/Debug/DeletionTool.exe
+/Users/jason_northam/Projects/DeletionTool/DeletionTool/obj/x86/Debug/DeletionTool.exe.mdb
