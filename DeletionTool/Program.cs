@@ -24,7 +24,7 @@ namespace DeletionTool
 			ToDelete.printFile ();
 
 			Console.WriteLine ("Initialise class...");
-			MatchingItems matchedItems = new MatchingItems ();
+			MatchingItems matchedItems = new MatchingItems ("items_to_keep.txt");
 
 			Console.WriteLine ("Read file...");
 			matchedItems.readFile ();
@@ -36,7 +36,7 @@ namespace DeletionTool
 			matchedItems.printFile ();
 
 			Console.WriteLine ("Saving list of test coys...");
-			matchedItems.saveToFile ();
+			matchedItems.saveToFile ("../../test_output.txt");
 
 		}
 	}

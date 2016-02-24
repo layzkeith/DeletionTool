@@ -7,18 +7,20 @@ namespace DeletionTool
 	public class MatchingItems
 	{
 
-		public List<KeyValuePair<string,string>> matchedItems;
-		public List<string> itemsInUse;
+		private List<KeyValuePair<string,string>> matchedItems;
+		private List<string> itemsInUse;
+		private string nameOfFile;
 
-		public MatchingItems()
+		public MatchingItems(string fileName)
 		{
 			matchedItems = new List<KeyValuePair<string, string>> ();
 			itemsInUse = new List<string> ();
+			nameOfFile = fileName;
 		}
 
 		public void readFile()
 		{
-			FileStream fs = new FileStream ("items_to_keep.txt", FileMode.Open);
+			FileStream fs = new FileStream (nameOfFile, FileMode.Open);
 
 
 
@@ -44,9 +46,9 @@ namespace DeletionTool
 			}
 		}
 
-		public void saveToFile()
+		public void saveToFile(string filePath)
 		{
-			string path = "../../test_output.txt";
+			string path = filePath;
 
 			if(File.Exists(path))
 			{
@@ -64,7 +66,6 @@ namespace DeletionTool
 
 		public void printFile()
 		{
-			Console.WriteLine ("In printFile() method...");
 			foreach(var element in matchedItems)
 			{
 				Console.WriteLine (element);	
@@ -72,6 +73,22 @@ namespace DeletionTool
 
 		}
 
+		public List<KeyValuePair<string,string>> MatchedItems
+		{
+			get{ return matchedItems;}
+			set{ matchedItems = value;}
+		}
+
+		public List<string> ItemsInUse
+		{
+			get{ return itemsInUse;}
+			set{ itemsInUse = value;}
+		}
+		public string NameOfFile
+		{
+			get { return nameOfFile; }
+			set { nameOfFile = value; }
+		}
 	}
 }
 
