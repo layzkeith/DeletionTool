@@ -15,7 +15,7 @@ namespace DeletionTool
 			Console.WriteLine ("Start of program...");
 
 			Console.WriteLine ("Initialise class...");
-			DeletionFile ToDelete = new DeletionFile ();
+			DeletionFile ToDelete = new DeletionFile ("test_file.txt");
 
 			Console.WriteLine ("Read file...");
 			ToDelete.readFile ();
