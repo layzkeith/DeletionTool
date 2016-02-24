@@ -26,7 +26,7 @@ namespace DeletionTool
 			while (!inStream.EndOfStream)
 			{
 				char delimiter = ' '; 
-				//Console.WriteLine (inStream.ReadLine ());
+
 				string line = inStream.ReadLine();
 				string[] splitLine = line.Split (delimiter);
 
@@ -37,8 +37,7 @@ namespace DeletionTool
 				}
 
 				DeletionList.Add (new KeyValuePair<string, string> (splitLine[0], description));
-				//Console.WriteLine (splitLine[0]);
-				//Console.WriteLine (description);
+
 				description = "";
 			}
 
