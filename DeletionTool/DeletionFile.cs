@@ -6,18 +6,20 @@ namespace DeletionTool
 {
 	public class DeletionFile
 	{
-		public List<KeyValuePair <string, string>> DeletionList;
+		private List<KeyValuePair <string, string>> deletionList;
+		private string nameOfFile;
 
-		public DeletionFile()
+		public DeletionFile(string fileName)
 		{
-			DeletionList = new List<KeyValuePair<string,string>>();
+			deletionList = new List<KeyValuePair<string,string>>();
+			nameOfFile = fileName;
 		}
 
 
 		public void readFile()
 		{
 
-			FileStream fs = new FileStream ("test_file.txt", FileMode.Open);
+			FileStream fs = new FileStream (nameOfFile, FileMode.Open);
 
 
 
@@ -36,7 +38,7 @@ namespace DeletionTool
 					description += splitLine[i] + " ";
 				}
 
-				DeletionList.Add (new KeyValuePair<string, string> (splitLine[0], description));
+				deletionList.Add (new KeyValuePair<string, string> (splitLine[0], description));
 
 				description = "";
 			}
@@ -51,11 +53,23 @@ namespace DeletionTool
 		public void printFile()
 		{
 			Console.WriteLine ("In printFile() method...");
-			foreach(var element in DeletionList)
+			foreach(var element in deletionList)
 			{
 				Console.WriteLine (element);	
 			}
 
+		}
+
+		public string NameOfFile
+		{
+			get { return nameOfFile; }
+			set { nameOfFile = value; }
+		}
+
+		public List<KeyValuePair<string,string>> DeletionList
+		{
+			get { return deletionList; }
+			set { deletionList = value; }
 		}
 	}
 }
